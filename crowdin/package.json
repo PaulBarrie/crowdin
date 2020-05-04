@@ -1,0 +1,28 @@
+{
+    "devDependencies": {
+        "@symfony/webpack-encore": "^0.29.0",
+        "core-js": "^3.0.0",
+        "regenerator-runtime": "^0.13.2",
+        "webpack-notifier": "^1.6.0"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "dev-server": "encore dev-server",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production --progress"
+    },
+    "dependencies": {
+        "browser-sync": "^2.26.7",
+        "fs": "0.0.1-security",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^7.0.1",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-header": "^2.0.9",
+        "gulp-plumber": "^1.2.1",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^4.1.0",
+        "merge-stream": "^2.0.0"
+    }
+}

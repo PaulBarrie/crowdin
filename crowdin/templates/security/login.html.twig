@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Crowdin - Login</title>
+
+    <link href="{{ asset("build/app.css")}}" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Custom fonts for this template -->
+    <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="../../vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <script src="{{ asset("build/app.js")}}"></script>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">Crowdin</a>
+    </div>
+</nav>
+
+<!-- Masthead -->
+<header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 mx-auto">
+                <h1 class="mb-5">Login</h1>
+                {% if error %}
+                    <div class="alert alert-danger">
+                        {{ error.messageKey }}
+                    </div>
+                {% endif %}
+                <form class="form-signin" action="{{ path('login') }}" method="post">
+                    <label for="inputEmail" class="sr-only">Email </label>
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Email address"
+                           value="{{ last_username }}" autofocus>
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" value="remember-me"> Remember me
+                        </label>
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Footer -->
+<footer class="footer bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+                <p class="text-muted small mb-4 mb-lg-0">&copy; Paul Barrié & Christophe Sykes. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+
